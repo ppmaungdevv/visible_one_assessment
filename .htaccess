@@ -1,0 +1,27 @@
+# Enable URL Rewriting
+RewriteEngine On
+
+# Redirect requests to index.php for non-file and non-directory URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [QSA,L]
+
+# Prevent direct access to hidden files (those starting with dot)
+RewriteRule (^|/)\. - [F]
+
+# Security: Deny access to sensitive files
+<FilesMatch "(^\.|\.php$)">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow URL rewriting for clean URLs (optional)
+# If you're using URLs like /product/123, uncomment the following line
+# RewriteRule ^product/([0-9]+)$ /product.php?id=$1 [L]
+
+# Handle custom error pages
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
