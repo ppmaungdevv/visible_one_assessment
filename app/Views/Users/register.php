@@ -7,7 +7,7 @@
     <title>Register</title>
 </head>
 <body class="min-h-svh flex items-center justify-center">
-    <div class="container h-full w-2/3 lg:w-1/3 mx-auto text-center flex flex-col gap-5 p-4 rounded-xl border shadow-lg">
+    <div class="container h-full md:w-2/3 lg:w-1/3 mx-auto text-center flex flex-col gap-5 p-4 rounded-xl border shadow-lg">
         <h1 class="text-4xl text-center">Register</h1>
         <form class="flex flex-col gap-5 items-center justify-center" action="/register" method="post">
             <div class="flex p-2 w-full max-w-md gap-2 items-center">

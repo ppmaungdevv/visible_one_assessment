@@ -26,19 +26,14 @@ This repository contains the source code for the Visible One code assessment.
     cd visible_one_assessment
     ```
 
-2. Copy the `.env.example` file to `.env` and configure your environment variables:
-    ```bash
-    cp .env.example .env
-    ```
-
-3. Build and start the Docker containers:
+2. Build and start the Docker containers:
     ```bash
     docker-compose up --build
     ```
 
-4. Initialize the database:
+3. Initialize the database:
     ```bash
-    docker exec -it <app_container_name> php init_db.php
+    docker exec -it vending_machine_app php init_db.php
     ```
 
 ## Usage
